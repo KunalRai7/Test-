@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Percentage Calculator</title>
+  </head>
+  <body>
+   <center>  <h1>Percentage Calculator : </h1>
+    <form>
+      <label for="amount">GOLD VALUATION :</label>
+      <input type="number" id="amount" name="amount">
+      <button type="button" onclick="calculate()">Calculate</button><br><br><br><br>
+ <label for="fifty">50% Of Valuation:</label>
+      <input type="text" id="fifty" name="fifty" readonly><br><br><br><br>
+      <label for="sixtyfive">65% Of Valuation :</label>
+      <input type="text" id="sixtyfive" name="sixtyfive" readonly><br><br>
+      <label for="sixtyfive1">Interest per month (1%):</label>
+      <input type="text" id="sixtyfive1" name="sixtyfive1" readonly><br><br>
+      <label for="sixtyfive2">Total Interest to be paid:</label>
+      <input type="text" id="sixtyfive2" name="sixtyfive2" readonly><br><br>
+<label for="sixtyfive3">Total amount with interest (65%):</label>
+<input type="text" id="sixtyfive3" name="sixtyfive3" readonly><br><br>
+<br><br>
+      <label for="seventyfive">75% Of Valuation :</label>
+      <input type="text" id="seventyfive" name="seventyfive" readonly><br><br>
+      <label for="seventyfive1">Interest per month (2.03%):</label>
+      <input type="text" id="seventyfive1" name="seventyfive1" readonly><br><br>
+      <label for="seventyfive2">Total Interest to be paid:</label>
+      <input type="text" id="seventyfive2" name="seventyfive2" readonly><br><br>
+<label for="seventyfive3">Total amount with interest (75%):</label>
+<input type="text" id="seventyfive3" name="seventyfive3" readonly></center> 
+    </form>
+    <script>
+function calculate() {
+  var amount = document.getElementById("amount").value;
+var fiftyPercent = amount * 0.5;
+  var sixtyFivePercent = amount * 0.65;
+  var sixtyFiveInterestPerMonth = sixtyFivePercent * 0.01;
+  var sixtyFiveTotalInterest = sixtyFiveInterestPerMonth * 6;
+  var sixtyFiveTotal = Number(sixtyFivePercent) + Number(sixtyFiveTotalInterest);
+  var seventyFivePercent = amount * 0.75;
+  var seventyFiveInterestPerMonth = seventyFivePercent * 0.0203;
+  var seventyFiveTotalInterest = seventyFiveInterestPerMonth * 6;
+  var seventyFiveTotal = Number(seventyFivePercent) + Number(seventyFiveTotalInterest);
+  document.getElementById("fifty").value = fiftyPercent;
+  document.getElementById("sixtyfive").value = sixtyFivePercent.toFixed(2);
+  document.getElementById("sixtyfive1").value = sixtyFiveInterestPerMonth.toFixed(2);
+  document.getElementById("sixtyfive2").value = sixtyFiveTotalInterest.toFixed(2);
+  document.getElementById("sixtyfive3").value = sixtyFiveTotal.toFixed(2);
+  document.getElementById("seventyfive").value = seventyFivePercent.toFixed(2);
+  document.getElementById("seventyfive1").value = seventyFiveInterestPerMonth.toFixed(2);
+  document.getElementById("seventyfive2").value = seventyFiveTotalInterest.toFixed(2);
+  document.getElementById("seventyfive3").value = seventyFiveTotal.toFixed(2);
+}
+
+
+
+   
+    </script>
+  </body>
+</html>
